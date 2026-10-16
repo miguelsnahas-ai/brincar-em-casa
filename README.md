@@ -1,19 +1,19 @@
-# Brincar em Casa — Landing page
+# Brincar em Casa: landing page
 
 Site estático (1 página) da consultoria **Brincar em Casa** + seção do grupo **Ofertas da Sil**.
 
 ## Arquivos
-- `index.html` — a página completa (HTML + CSS + JS, tudo junto).
-- `ofertas-da-sil-logo.png` — logo usado na seção Ofertas da Sil. Precisa ficar na mesma pasta do `index.html`.
+- `index.html`: a página completa (HTML + CSS + JS, tudo junto).
+- `ofertas-da-sil-logo.png`: logo usado na seção Ofertas da Sil. Precisa ficar na mesma pasta do `index.html`.
 
-As fontes (Quicksand + Mulish) carregam do Google Fonts automaticamente — não precisa baixar nada.
+As fontes (Quicksand + Mulish) carregam do Google Fonts automaticamente, não precisa baixar nada.
 
 ## Como publicar pelo Claude Code
 
 1. Copie estes dois arquivos para a pasta do seu projeto no Claude Code.
 2. Cole o prompt abaixo:
 
-> Tenho um site estático de uma página só: `index.html` e a imagem `ofertas-da-sil-logo.png`, na raiz do projeto. Quero publicar online com um link público. Faça o deploy como site estático (pode ser GitHub Pages, Vercel, Netlify ou Cloudflare Pages — escolha o mais simples de configurar daqui) e, ao final, me mostre a URL pública. Não altere o conteúdo nem o visual da página, só publique.
+> Tenho um site estático de uma página só: `index.html` e a imagem `ofertas-da-sil-logo.png`, na raiz do projeto. Quero publicar online com um link público. Faça o deploy como site estático (pode ser GitHub Pages, Vercel, Netlify ou Cloudflare Pages; escolha o mais simples de configurar daqui) e, ao final, me mostre a URL pública. Não altere o conteúdo nem o visual da página, só publique.
 
 Se quiser domínio próprio depois (ex.: `brincaremcasa.com.br`), peça ao Claude Code para configurar o DNS no serviço escolhido.
 
