@@ -1,13 +1,13 @@
 # Brincar em Casa: landing page
 
-Site estático (1 página) da consultoria **Brincar em Casa**, com a identidade visual do **Quintal**, + seção do grupo **Ofertas da Sil**.
+Site estático (1 página) da consultoria **Brincar em Casa**, na mesma linguagem visual do **Quintal**, + seção do grupo **Ofertas da Sil**.
 
 ## Arquivos
 - `index.html`: a página completa (HTML + CSS + JS, tudo junto).
 - `ofertas-da-sil-logo.png`: logo usado na seção Ofertas da Sil. Precisa ficar na mesma pasta do `index.html`.
-- `assets/quintal-*.png`: logos do Quintal (cabeçalho, rodapé e ícone da aba).
+- `assets/brincar-em-casa-*.svg`: logo do Brincar em Casa (principal, compacto sem frase, empilhado, invertido para fundo escuro, e só o símbolo da casinha, usado como ícone da aba).
 
-As fontes do Quintal (Newsreader, DM Sans e Caveat) carregam do Google Fonts automaticamente, não precisa baixar nada.
+As fontes (Newsreader, DM Sans e Caveat) carregam do Google Fonts automaticamente, não precisa baixar nada.
 
 ## Como publicar pelo Claude Code
 
