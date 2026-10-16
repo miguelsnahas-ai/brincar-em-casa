@@ -87,6 +87,14 @@
   .btn-peach{background:var(--peach-200)}
   .btn-butter{background:var(--butter)}
   .btn-sage{background:var(--sage-200)}
+  .btn-wa{background:var(--forest);color:var(--on-forest);flex-direction:row;gap:var(--space-3)}
+  .btn-wa .sub{color:var(--cream)}
+  .btn-wa .txt{display:flex;flex-direction:column;align-items:flex-start;text-align:left}
+  .btn-wa:hover{filter:brightness(1.15)}
+  .wa-icon{width:26px;height:26px;fill:currentColor;flex:none}
+  .wa-float{position:fixed;right:20px;bottom:20px;z-index:50;width:60px;height:60px;border-radius:50%;background:var(--forest);color:var(--on-forest);display:grid;place-items:center;box-shadow:0 10px 24px -10px rgba(15,45,33,.6);transition:transform .15s}
+  .wa-float:hover{transform:translateY(-2px)}
+  .wa-float .wa-icon{width:30px;height:30px}
 
   /* tags */
   .tags{display:flex;flex-wrap:wrap;gap:var(--space-2)}
@@ -203,7 +211,6 @@
   .final{text-align:center}
   .final h2{font-size:clamp(30px,4vw,44px);line-height:1.12;max-width:20ch;margin:0 auto var(--space-4)}
   .final p{max-width:48ch;margin:0 auto var(--space-6);font-size:18px;line-height:28px}
-  .todo{border:1.5px dashed var(--forest-soft);background:var(--sage-100);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);color:var(--ink-body);font-size:14px;line-height:20px;max-width:520px;margin:var(--space-6) auto 0}
 
   /* ofertas da sil */
   .ofertas-card{display:grid;grid-template-columns:240px 1fr;gap:var(--space-7);align-items:center;padding:var(--space-7)}
@@ -234,6 +241,7 @@
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2A9.7 9.7 0 0 0 3.6 16.8L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2c0 1.2.9 2.3 1 2.5.1.2 1.7 2.7 4.2 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.6-.3z"/></symbol>
     <symbol id="i-check" viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.1 4.3 2.6.7-1.5 2.2-2.6 4.3-2.6 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></symbol>
@@ -253,7 +261,7 @@
       <a href="#sobre">Sobre</a>
       <a href="#ofertas">Ofertas da Sil</a>
       <a href="#faq">Dúvidas</a>
-      <a class="btn-card btn-peach label" href="#planos">Quero começar</a>
+      <a class="btn-card btn-peach label" href="https://wa.me/5511971541228?text=Oi%2C%20Sil%21%20Vim%20pelo%20site%20do%20Brincar%20em%20Casa%20e%20quero%20conversar%20sobre%20a%20consultoria." target="_blank" rel="noopener">Falar com a Sil</a>
     </nav>
   </div>
 </header>
@@ -384,7 +392,7 @@
       <div class="section-head center reveal">
         <span class="eyebrow">Escolha por onde começar</span>
         <h2>Três formas de trazer o brincar para a sua casa.</h2>
-        <p>Do primeiro passo em grupo ao acompanhamento completo com projeto do espaço.</p>
+        <p>Do primeiro passo em grupo à consultoria individual, com ou sem projeto do espaço.</p>
       </div>
       <div class="plans">
 
@@ -400,34 +408,34 @@
             <!-- CONFIRMAR: material de apoio? gravação? -->
           </ul>
           <p class="wait-note">No momento não há turma aberta. Entre na lista de espera e seja avisada em primeira mão quando abrir a próxima turma.</p>
-          <a class="btn-card btn-butter" href="#contato"><span class="label">Me avisa</span><span class="sub">Entrar na lista de espera</span></a>
+          <a class="btn-card btn-butter" href="https://wa.me/5511971541228?text=Oi%2C%20Sil%21%20Quero%20entrar%20na%20lista%20de%20espera%20do%20workshop%20Brincar%20em%20Casa." target="_blank" rel="noopener"><span class="label">Me avisa</span><span class="sub">Lista de espera pelo WhatsApp</span></a>
         </div>
 
         <div class="plan t-peach reveal">
           <div class="tags"><span class="tag tag--fav">Mais escolhido</span></div>
-          <h3>Intermediário</h3>
+          <h3>Consultoria online</h3>
           <div class="price">R$ 500</div>
-          <p class="who">Online e individual, no ritmo da sua casa.</p>
+          <p class="who">Acompanhamento individual e online, no ritmo da sua casa.</p>
           <ul class="checks">
             <li><span class="check"><svg><use href="#i-check"/></svg></span>Jornada completa da consultoria</li>
             <li><span class="check"><svg><use href="#i-check"/></svg></span>Cronograma personalizado para a sua rotina</li>
             <li><span class="check"><svg><use href="#i-check"/></svg></span>Lista de brinquedos e materiais para comprar</li>
             <li><span class="check"><svg><use href="#i-check"/></svg></span>Suporte por WhatsApp durante o processo</li>
           </ul>
-          <a class="btn-card btn-peach" href="#contato"><span class="label">Vamos juntas</span><span class="sub">Quero o acompanhamento</span></a>
+          <a class="btn-card btn-peach" href="https://wa.me/5511971541228?text=Oi%2C%20Sil%21%20Quero%20saber%20mais%20sobre%20a%20Consultoria%20online%20do%20Brincar%20em%20Casa." target="_blank" rel="noopener"><span class="label">Quero a consultoria</span><span class="sub">Falar com a Sil no WhatsApp</span></a>
         </div>
 
         <div class="plan t-sky reveal">
           <div class="tags"><span class="tag">Experiência completa</span></div>
-          <h3>Premium</h3>
+          <h3>Consultoria com projeto</h3>
           <div class="price">R$ 900</div>
-          <p class="who">Tudo do intermediário, com projeto do espaço.</p>
+          <p class="who">Tudo da consultoria online, mais o projeto dos espaços da sua casa.</p>
           <ul class="checks">
-            <li><span class="check"><svg><use href="#i-check"/></svg></span>Tudo o que está no plano Intermediário</li>
+            <li><span class="check"><svg><use href="#i-check"/></svg></span>Tudo o que está na Consultoria online</li>
             <li><span class="check"><svg><use href="#i-check"/></svg></span>Visualização 3D dos principais ambientes de brincar da casa</li>
             <li><span class="check"><svg><use href="#i-check"/></svg></span>Encontro presencial (para a Grande São Paulo)</li>
           </ul>
-          <a class="btn-card btn-peach" href="#contato"><span class="label">Quero conversar</span><span class="sub">Sobre o Premium</span></a>
+          <a class="btn-card btn-peach" href="https://wa.me/5511971541228?text=Oi%2C%20Sil%21%20Quero%20saber%20mais%20sobre%20a%20Consultoria%20com%20projeto%20do%20Brincar%20em%20Casa." target="_blank" rel="noopener"><span class="label">Quero conversar</span><span class="sub">Falar com a Sil no WhatsApp</span></a>
         </div>
 
       </div>
@@ -478,7 +486,7 @@
       <div class="faq reveal">
         <details><summary>Para qual idade funciona?</summary><p>A consultoria é pensada para a primeira infância, de 0 a 7 anos, a fase em que o brincar mais estrutura o desenvolvimento.</p></details>
         <details><summary>Preciso comprar muitos brinquedos?</summary><p>Não. A proposta é justamente aproveitar o que você já tem, elementos da natureza e materiais simples. Você recebe uma lista curada do que realmente vale a pena.</p></details>
-        <details><summary>Os encontros são online?</summary><p>O workshop e o plano intermediário são totalmente online. O plano Premium pode incluir um encontro presencial para clientes da Grande São Paulo.</p></details>
+        <details><summary>Os encontros são online?</summary><p>O workshop e a Consultoria online são totalmente online. A Consultoria com projeto pode incluir um encontro presencial para clientes da Grande São Paulo.</p></details>
         <details><summary>E se eu não tiver muito tempo?</summary><p>O cronograma é montado para caber na sua rotina real. A ideia é reduzir a sua sobrecarga, não somar mais uma tarefa.</p></details>
         <!-- Sugestão: adicionar dúvidas sobre garantia, forma de pagamento e prazo do acompanhamento quando definirmos. -->
       </div>
@@ -489,11 +497,10 @@
   <section class="band final" id="contato" style="padding-top:0">
     <div class="wrap">
       <h2 class="reveal">Que tal a casa virar um convite ao brincar?</h2>
-      <p class="reveal">Entre na lista de espera do workshop ou fale diretamente sobre o acompanhamento que faz sentido para a sua família.</p>
+      <p class="reveal">Fale com a Sil no WhatsApp para entrar na lista de espera do workshop ou para escolher a consultoria que faz sentido para a sua família.</p>
       <div class="reveal">
-        <a class="btn-card btn-peach" href="#planos" style="display:inline-flex;min-width:240px"><span class="label">Escolher meu plano</span><span class="sub">Ver os três formatos</span></a>
+        <a class="btn-card btn-wa" href="https://wa.me/5511971541228?text=Oi%2C%20Sil%21%20Vim%20pelo%20site%20do%20Brincar%20em%20Casa%20e%20quero%20conversar%20sobre%20a%20consultoria." target="_blank" rel="noopener" style="display:inline-flex;min-width:260px"><svg class="wa-icon" aria-hidden="true"><use href="#i-wa"/></svg><span class="txt"><span class="label">Falar com a Sil</span><span class="sub">(11) 97154-1228 no WhatsApp</span></span></a>
       </div>
-      <div class="todo reveal"><strong>A definir:</strong> links reais de contato da consultoria (WhatsApp, Instagram e/ou botão de compra). Me mande e eu conecto os botões.</div>
     </div>
   </section>
 
@@ -530,10 +537,12 @@
     <img src="assets/brincar-em-casa-logo-reversed.svg" alt="Brincar em Casa, consultoria do brincar" width="230" height="96" />
     <div class="meta">
       Consultoria de espaços brincantes na primeira infância.<br />
-      <a href="https://chat.whatsapp.com/HdtaHiWBE4R0VlGRnchO0M?s=cl&p=i&ilr=4&iam=0" target="_blank" rel="noopener">Grupo Ofertas da Sil</a> · <span style="opacity:.75">@instagram (a definir)</span>
+      <a href="https://wa.me/5511971541228?text=Oi%2C%20Sil%21%20Vim%20pelo%20site%20do%20Brincar%20em%20Casa%20e%20quero%20conversar%20sobre%20a%20consultoria." target="_blank" rel="noopener">WhatsApp (11) 97154-1228</a> · <a href="https://chat.whatsapp.com/HdtaHiWBE4R0VlGRnchO0M?s=cl&p=i&ilr=4&iam=0" target="_blank" rel="noopener">Grupo Ofertas da Sil</a> · <span style="opacity:.75">@instagram (a definir)</span>
     </div>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/5511971541228?text=Oi%2C%20Sil%21%20Vim%20pelo%20site%20do%20Brincar%20em%20Casa%20e%20quero%20conversar%20sobre%20a%20consultoria." target="_blank" rel="noopener" aria-label="Falar com a Sil no WhatsApp"><svg class="wa-icon" aria-hidden="true"><use href="#i-wa"/></svg></a>
 
 <script>
   const io = new IntersectionObserver((entries)=>{

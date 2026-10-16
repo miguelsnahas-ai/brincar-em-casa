@@ -19,9 +19,9 @@ As fontes (Newsreader, DM Sans e Caveat) carregam do Google Fonts automaticament
 Se quiser domínio próprio depois (ex.: `brincaremcasa.com.br`), peça ao Claude Code para configurar o DNS no serviço escolhido.
 
 ## O que ainda falta preencher (placeholders no HTML)
-- **Contato da consultoria:** os botões de CTA da consultoria apontam para `#planos`. Troque pelo link real (WhatsApp/compra) quando tiver. Procure por `A definir` no HTML.
 - **Instagram:** no rodapé há `@instagram (a definir)`.
 - **Foto da Silvana:** a seção "Sobre" tem um espaço reservado ("foto da Silvana"). É só trocar o bloco `.portrait` por uma `<img>`.
 
 ## Já configurado
-- O botão **"Entrar no grupo gratuito"** e o link do rodapé já apontam para o grupo de WhatsApp das Ofertas da Sil.
+- Os botões dos planos, o botão final, o botão do cabeçalho e o botão flutuante abrem o WhatsApp da Sil, (11) 97154-1228, já com uma mensagem pronta para cada caso.
+- O botão **"Quero entrar"** da seção Ofertas da Sil e o link do rodapé já apontam para o grupo de WhatsApp das Ofertas da Sil.
