@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brincar em Casa — Consultoria de espaços brincantes na primeira infância</title>
+<meta name="description" content="Consultoria para mães transformarem a casa num convite ao brincar: rotina, autonomia da criança, menos telas e mais vínculo — na primeira infância (0 a 7 anos)." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#F1E8D9;
+    --paper-2:#EADFCB;
+    --paper-3:#E3D5BC;
+    --ink:#3D3129;
+    --ink-soft:#705E52;
+    --clay:#B65E3C;
+    --clay-deep:#9C4E30;
+    /* quatro elementos — momento de assinatura */
+    --agua:#5E86A8;
+    --terra:#B0603E;
+    --ar:#7E9A6A;
+    --fogo:#D08A3A;
+    --line:rgba(61,49,41,.14);
+    --shadow:0 18px 44px -26px rgba(61,49,41,.45);
+    --maxw:1120px;
+    --r:22px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0;
+    font-family:"Mulish",system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:"Quicksand",sans-serif;font-weight:600;line-height:1.1;letter-spacing:-.01em}
+  p{margin:0 0 1rem}
+  a{color:inherit}
+  img{max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-family:"Quicksand",sans-serif;font-weight:600;
+    text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;
+    color:var(--clay);
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-family:"Quicksand",sans-serif;font-weight:600;
+    background:var(--clay);color:#fff;text-decoration:none;
+    padding:.95rem 1.6rem;border-radius:999px;border:0;cursor:pointer;
+    font-size:1.02rem;transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
+    box-shadow:0 12px 24px -14px rgba(156,78,48,.8);
+  }
+  .btn:hover{background:var(--clay-deep);transform:translateY(-2px)}
+  .btn--ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);box-shadow:none}
+  .btn--ghost:hover{background:var(--paper-2);transform:translateY(-2px)}
+
+  /* ---- nav ---- */
+  header.site{position:sticky;top:0;z-index:40;background:rgba(241,232,217,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{font-family:"Quicksand",sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:.55rem}
+  .brand .dot{width:15px;height:15px;border-radius:50%;background:
+     radial-gradient(circle at 35% 30%, var(--fogo), var(--terra) 70%)}
+  .nav .links{display:flex;gap:1.9rem;align-items:center}
+  .nav .links a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--ink-soft)}
+  .nav .links a:hover{color:var(--ink)}
+  .nav .btn{padding:.6rem 1.2rem;font-size:.92rem}
+  @media(max-width:840px){.nav .links a:not(.btn){display:none}}
+
+  /* ---- blobs (eco da marca aquarela) ---- */
+  .blob{position:absolute;border-radius:50%;filter:blur(6px);opacity:.5;z-index:0;pointer-events:none}
+
+  /* ---- hero ---- */
+  .hero{position:relative;padding:88px 0 72px;overflow:hidden}
+  .hero .b1{width:420px;height:380px;left:-160px;top:-120px;background:radial-gradient(circle at 40% 40%, #d9b7a3, transparent 70%)}
+  .hero .b2{width:360px;height:340px;right:-120px;top:40px;background:radial-gradient(circle at 50% 50%, #c9d3bd, transparent 70%)}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(2.3rem,5vw,3.65rem);margin:.6rem 0 1rem}
+  .hero h1 .accent{color:var(--clay)}
+  .hero .lead{font-size:1.16rem;color:var(--ink-soft);max-width:34ch}
+  .hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:1.6rem}
+  .hero .micro{margin-top:1.1rem;font-size:.9rem;color:var(--ink-soft)}
+
+  /* convite — cartão ilustrativo do hero */
+  .invite{
+    position:relative;background:var(--paper-2);border-radius:26px;padding:26px;
+    box-shadow:var(--shadow);border:1px solid var(--line);
+  }
+  .invite .mat{
+    background:
+      repeating-linear-gradient(45deg,#d8c4a4 0 8px,#d2bd9b 8px 16px);
+    border-radius:16px;padding:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+  }
+  .invite .chip{aspect-ratio:1;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:"Quicksand";font-weight:600;color:#fff;font-size:.86rem;text-align:center;box-shadow:inset 0 -6px 14px -8px rgba(0,0,0,.35)}
+  .invite .cap{margin-top:16px;font-family:"Quicksand";font-weight:600;text-align:center;color:var(--ink)}
+  @media(max-width:840px){
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .hero .lead{max-width:none}
+  }
+
+  /* ---- section base ---- */
+  section{position:relative}
+  .band{padding:78px 0}
+  .band--alt{background:var(--paper-2)}
+  .band--deep{background:var(--ink);color:#F1E8D9}
+  .band--deep .eyebrow{color:#e6b79f}
+  .kicker{max-width:60ch}
+  .section-head{margin-bottom:44px;max-width:62ch}
+  .section-head h2{font-size:clamp(1.8rem,3.6vw,2.5rem);margin:.5rem 0 .6rem}
+  .section-head p{color:var(--ink-soft);font-size:1.08rem}
+  .band--deep .section-head p{color:#d8c9ba}
+
+  /* ---- dor / bullets empáticos ---- */
+  .pains{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .pain{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+  .band--alt .pain{background:var(--paper-3)}
+  .pain h3{font-size:1.12rem;margin:0 0 .4rem}
+  .pain p{color:var(--ink-soft);margin:0;font-size:.98rem}
+  @media(max-width:760px){.pains{grid-template-columns:1fr}}
+
+  /* ---- método 4 passos (sequência real → numeração justificada) ---- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .step{position:relative;padding-top:14px}
+  .step .num{font-family:"Quicksand";font-weight:700;font-size:2.4rem;color:var(--clay);line-height:1}
+  .step h3{font-size:1.16rem;margin:.5rem 0 .35rem}
+  .step p{color:var(--ink-soft);font-size:.96rem;margin:0}
+  .step::before{content:"";position:absolute;top:24px;right:-10px;width:20px;height:2px;background:var(--line)}
+  .step:last-child::before{display:none}
+  @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}.step::before{display:none}}
+  @media(max-width:460px){.steps{grid-template-columns:1fr}}
+
+  /* ---- assinatura: quatro elementos ---- */
+  .elements{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+  .el{border-radius:var(--r);padding:26px 22px;color:#fff;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:var(--shadow)}
+  .el .lab{font-family:"Quicksand";font-weight:700;font-size:1.5rem;letter-spacing:.02em}
+  .el p{margin:.4rem 0 0;font-size:.95rem;opacity:.95}
+  .el--agua{background:linear-gradient(160deg,#6b93b5,var(--agua))}
+  .el--terra{background:linear-gradient(160deg,#bd6c48,var(--terra))}
+  .el--ar{background:linear-gradient(160deg,#8fa97b,var(--ar))}
+  .el--fogo{background:linear-gradient(160deg,#dc9a4c,var(--fogo))}
+  @media(max-width:860px){.elements{grid-template-columns:1fr 1fr}}
+  @media(max-width:440px){.elements{grid-template-columns:1fr}}
+
+  /* ---- planos ---- */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+  .plan{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:30px 26px;display:flex;flex-direction:column}
+  .plan.feature{background:var(--paper-3);border:2px solid var(--clay);box-shadow:var(--shadow);position:relative}
+  .plan .tag{font-family:"Quicksand";font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;color:var(--ink-soft)}
+  .plan.feature .badge{position:absolute;top:-13px;left:26px;background:var(--clay);color:#fff;font-family:"Quicksand";font-weight:600;font-size:.72rem;letter-spacing:.05em;padding:.3rem .8rem;border-radius:999px}
+  .plan h3{font-size:1.4rem;margin:.5rem 0 .2rem}
+  .plan .price{font-family:"Quicksand";font-weight:700;font-size:2.1rem;color:var(--ink);margin:.3rem 0 .1rem}
+  .plan .price small{font-size:.9rem;font-weight:600;color:var(--ink-soft)}
+  .plan .who{color:var(--ink-soft);font-size:.94rem;margin:.2rem 0 1rem}
+  .plan ul{list-style:none;padding:0;margin:0 0 1.4rem;display:flex;flex-direction:column;gap:.6rem;flex-grow:1}
+  .plan li{position:relative;padding-left:1.7rem;font-size:.96rem}
+  .plan li::before{content:"";position:absolute;left:0;top:.42em;width:12px;height:12px;border-radius:50%;background:var(--ar)}
+  .plan.feature li::before{background:var(--clay)}
+  .plan .btn{width:100%;justify-content:center}
+  .plan--entry .btn{background:transparent;color:var(--ink);border:1.5px solid var(--clay);box-shadow:none}
+  .plan--entry .btn:hover{background:var(--clay);color:#fff}
+  .plan .wait{display:inline-block;align-self:flex-start;margin-top:.5rem;font-family:"Quicksand";font-weight:600;font-size:.78rem;letter-spacing:.04em;background:rgba(126,154,106,.18);color:#55703f;border:1px solid rgba(126,154,106,.4);padding:.3rem .8rem;border-radius:999px}
+  .plan .wait-note{font-size:.88rem;color:var(--ink-soft);margin:-.6rem 0 1rem}
+  @media(max-width:900px){.plans{grid-template-columns:1fr}}
+
+  /* ---- sobre / prova social ---- */
+  .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+  .portrait{aspect-ratio:4/5;border-radius:24px;background:
+      radial-gradient(circle at 30% 25%, #d9b7a3, transparent 60%),
+      linear-gradient(160deg,var(--paper-3),#d6c4a6);
+      display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+  @media(max-width:800px){.about{grid-template-columns:1fr}}
+
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .quote{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+  .band--alt .quote{background:var(--paper-3)}
+  .quote p{font-style:italic;color:var(--ink);margin:0 0 .8rem}
+  .quote .who{font-family:"Quicksand";font-weight:600;font-size:.9rem;color:var(--ink-soft);font-style:normal}
+  @media(max-width:820px){.quotes{grid-template-columns:1fr}}
+
+  /* ---- placeholder / a definir ---- */
+  .todo{border:1.5px dashed var(--clay);background:rgba(182,94,60,.06);border-radius:14px;padding:14px 18px;color:var(--clay-deep);font-size:.92rem}
+  .todo strong{font-family:"Quicksand"}
+
+  /* ---- faq ---- */
+  .faq{max-width:780px;margin:0 auto}
+  details{border-bottom:1px solid var(--line);padding:1.1rem 0}
+  details summary{font-family:"Quicksand";font-weight:600;font-size:1.08rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-size:1.5rem;color:var(--clay);transition:transform .2s}
+  details[open] summary::after{content:"–"}
+  details p{margin:.8rem 0 0;color:var(--ink-soft)}
+
+  /* ---- cta final ---- */
+  .final{padding:84px 0;text-align:center;position:relative;overflow:hidden}
+  .final .b3{width:460px;height:420px;left:50%;top:-140px;transform:translateX(-50%);background:radial-gradient(circle,#e0c3ab,transparent 70%);opacity:.55}
+  .final h2{font-size:clamp(2rem,4vw,2.9rem);position:relative;z-index:2;max-width:20ch;margin:0 auto 1rem}
+  .final p{position:relative;z-index:2;color:var(--ink-soft);max-width:48ch;margin:0 auto 1.8rem;font-size:1.1rem}
+
+  footer.site{background:var(--ink);color:#d8c9ba;padding:40px 0;font-size:.92rem}
+  footer.site .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  footer.site a{color:#e6b79f;text-decoration:none}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  :focus-visible{outline:3px solid var(--clay);outline-offset:2px;border-radius:6px}
+
+  /* ---- Ofertas da Sil (iniciativa irmã) ---- */
+  :root{ --coral:#DD8871; --coral-deep:#C96A52; --coral-soft:#F7E4DD; }
+  .ofertas{ background:linear-gradient(170deg,#F7E4DD 0%, #F3D8CE 100%); padding:76px 0; }
+  .ofertas-grid{ display:grid; grid-template-columns:300px 1fr; gap:52px; align-items:center; }
+  .ofertas .logo-wrap{ display:flex; justify-content:center; }
+  .ofertas .logo-wrap img{ width:260px; height:260px; border-radius:50%;
+    box-shadow:0 20px 44px -22px rgba(157,74,48,.6); }
+  .ofertas .eyebrow{ color:var(--coral-deep); }
+  .ofertas h2{ font-size:clamp(1.8rem,3.6vw,2.4rem); margin:.4rem 0 .4rem; color:#5a3528; }
+  .ofertas .lead{ font-size:1.1rem; color:#7a5547; max-width:52ch; margin-bottom:1rem; }
+  .ofertas .tags{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 1.6rem; }
+  .ofertas .tags span{ font-family:"Quicksand",sans-serif; font-weight:600; font-size:.82rem;
+    background:rgba(255,255,255,.6); color:var(--coral-deep); border:1px solid rgba(201,106,82,.25);
+    border-radius:999px; padding:.4rem .85rem; }
+  .btn--coral{ background:var(--coral-deep); box-shadow:0 12px 24px -14px rgba(201,106,82,.9); }
+  .btn--coral:hover{ background:#b45a44; }
+  @media(max-width:820px){
+    .ofertas-grid{ grid-template-columns:1fr; gap:28px; text-align:center; }
+    .ofertas .lead{ margin-left:auto; margin-right:auto; }
+    .ofertas .tags{ justify-content:center; }
+    .ofertas .logo-wrap img{ width:200px; height:200px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#topo"><span class="dot"></span>Brincar em Casa</a>
+    <nav class="links" aria-label="Navegação">
+      <a href="#metodo">Método</a>
+      <a href="#planos">Planos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#ofertas">Ofertas da Sil</a>
+      <a href="#faq">Dúvidas</a>
+      <a class="btn" href="#planos">Quero começar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- ====== HERO ====== -->
+  <section class="hero">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <div class="wrap hero-grid">
+      <div class="reveal in">
+        <span class="eyebrow">Consultoria de espaços brincantes · 0 a 7 anos</span>
+        <h1>Uma casa que <span class="accent">convida a brincar</span> — e devolve o seu tempo.</h1>
+        <p class="lead">Sem virar animadora em tempo integral. Você aprende a preparar cantos que sustentam o seu filho brincando sozinho, com autonomia, menos tela e mais presença de verdade.</p>
+        <div class="cta-row">
+          <a class="btn" href="#planos">Ver os planos</a>
+          <a class="btn btn--ghost" href="#metodo">Como funciona</a>
+        </div>
+        <p class="micro">Para mães que querem rotina em casa sem abrir mão do vínculo.</p>
+      </div>
+      <div class="invite reveal in" aria-hidden="true">
+        <div class="mat">
+          <span class="chip" style="background:var(--agua)">água</span>
+          <span class="chip" style="background:var(--terra)">terra</span>
+          <span class="chip" style="background:var(--ar)">ar</span>
+          <span class="chip" style="background:var(--fogo)">fogo</span>
+          <span class="chip" style="background:#9d7d63">natureza</span>
+          <span class="chip" style="background:var(--clay)">faz de conta</span>
+        </div>
+        <div class="cap">Espaço é um convite.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== DOR ====== -->
+  <section class="band band--alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Talvez você reconheça</span>
+        <h2>O dia rende pouco e a culpa sobra.</h2>
+        <p>Conciliar casa, trabalho e um filho pequeno vira uma corrida — e a tela quase sempre entra como o único jeito de ter cinco minutos.</p>
+      </div>
+      <div class="pains">
+        <div class="pain reveal"><h3>“Ele só brinca se eu estiver junto”</h3><p>A brincadeira não se sustenta sozinha e qualquer tarefa sua é interrompida em minutos.</p></div>
+        <div class="pain reveal"><h3>A tela vira muleta</h3><p>Você sabe que é demais, mas no aperto do dia não sobra alternativa pronta à mão.</p></div>
+        <div class="pain reveal"><h3>Brinquedo demais, brincadeira de menos</h3><p>A casa está cheia de coisas, e ainda assim parece faltar o que realmente engaja.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== O QUE É ====== -->
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">A proposta</span>
+        <h2>Brincar é o fazer da criança — não uma distração.</h2>
+        <p>É brincando que a criança conhece o mundo e desenvolve linguagem, criatividade, coordenação e cuidado de si. A consultoria te ajuda a organizar a casa para que isso aconteça no dia a dia: espaços que convidam, materiais certos e uma rotina possível para a sua família.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== MÉTODO 4 PASSOS ====== -->
+  <section class="band band--alt" id="metodo">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">O método</span>
+        <h2>Quatro passos para um espaço brincante.</h2>
+        <p>Um caminho simples e repetível — você aprende a fazer sozinha em qualquer canto da casa.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="num">1</div><h3>Observação</h3><p>Enxergar de verdade os interesses do seu filho: com o que ele brinca, o que cria, o que chama atenção.</p></div>
+        <div class="step reveal"><div class="num">2</div><h3>Reflexão</h3><p>Como ampliar as possibilidades a partir do que ele já faz — enriquecer as investigações e narrativas.</p></div>
+        <div class="step reveal"><div class="num">3</div><h3>Curadoria</h3><p>Escolher materiais que abram diversidade de experiências, com o que já existe em casa.</p></div>
+        <div class="step reveal"><div class="num">4</div><h3>Organização</h3><p>Dar contorno ao espaço e cuidar dos detalhes que transformam um canto num convite.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ASSINATURA: QUATRO ELEMENTOS ====== -->
+  <section class="band band--deep">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">A paleta de experiências</span>
+        <h2>Água, terra, ar e fogo.</h2>
+        <p>Os elementos mais naturais para uma criança explorar. A partir deles nascem propostas ricas e baratas — muito além do brinquedo pronto.</p>
+      </div>
+      <div class="elements">
+        <div class="el el--agua reveal"><span class="lab">Água</span><p>Transvasar, colorir, congelar, misturar. O sensorial que acalma e concentra.</p></div>
+        <div class="el el--terra reveal"><span class="lab">Terra</span><p>Cozinha de lama, elementos naturais, brincar heurístico com o que a natureza oferece.</p></div>
+        <div class="el el--ar reveal"><span class="lab">Ar</span><p>Tecidos, movimento, cabanas e circuitos: o corpo brincando no espaço.</p></div>
+        <div class="el el--fogo reveal"><span class="lab">Fogo</span><p>Faz de conta, aconchego e narrativa — o mundo simbólico ganhando vida.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PLANOS ====== -->
+  <section class="band" id="planos">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center">
+        <span class="eyebrow">Escolha por onde começar</span>
+        <h2>Três formas de trazer o brincar para a sua casa.</h2>
+        <p style="margin-left:auto;margin-right:auto">Do primeiro passo em grupo ao acompanhamento completo com projeto do espaço.</p>
+      </div>
+      <div class="plans">
+
+        <div class="plan plan--entry reveal">
+          <span class="tag">Comece por aqui</span>
+          <h3>Workshop ao vivo</h3>
+          <span class="wait">Lista de espera</span>
+          <div class="price">R$ 100 <small>/ por mãe</small></div>
+          <p class="who">Online e em grupo (até 20 mães).</p>
+          <ul>
+            <li>Encontro ao vivo com os fundamentos do brincar</li>
+            <li>Como montar seu primeiro espaço brincante</li>
+            <li>Ideias práticas para aplicar já no mesmo dia</li>
+            <!-- CONFIRMAR: material de apoio? gravação? -->
+          </ul>
+          <p class="wait-note">No momento não há turma aberta. Entre na lista de espera e seja avisada em primeira mão quando abrir a próxima turma.</p>
+          <a class="btn" href="#contato">Entrar na lista de espera</a>
+        </div>
+
+        <div class="plan feature reveal">
+          <span class="badge">Mais escolhido</span>
+          <span class="tag">Acompanhamento</span>
+          <h3>Intermediário</h3>
+          <div class="price">R$ 500</div>
+          <p class="who">Online e individual, no ritmo da sua casa.</p>
+          <ul>
+            <li>Jornada completa da consultoria</li>
+            <li>Cronograma personalizado para a sua rotina</li>
+            <li>Lista de brinquedos e materiais para comprar</li>
+            <li>Suporte por WhatsApp durante o processo</li>
+          </ul>
+          <a class="btn" href="#contato">Quero o acompanhamento</a>
+        </div>
+
+        <div class="plan reveal">
+          <span class="tag">Experiência completa</span>
+          <h3>Premium</h3>
+          <div class="price">R$ 900</div>
+          <p class="who">Tudo do intermediário, com projeto do espaço.</p>
+          <ul>
+            <li>Tudo o que está no plano Intermediário</li>
+            <li>Visualização 3D dos principais ambientes de brincar da casa</li>
+            <li>Encontro presencial (para a Grande São Paulo)</li>
+          </ul>
+          <a class="btn" href="#contato">Falar sobre o Premium</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SOBRE ====== -->
+  <section class="band band--alt" id="sobre">
+    <div class="wrap about">
+      <div class="portrait reveal" aria-hidden="true">
+        <!-- PLACEHOLDER: foto da Silvana -->
+        <span style="font-family:Quicksand;font-weight:600;color:var(--ink-soft)">foto da Silvana</span>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Quem conduz</span>
+        <h2 style="font-size:clamp(1.7rem,3.4vw,2.3rem);margin:.4rem 0 .8rem">Oi, eu sou a Silvana</h2>
+        <p style="color:var(--ink-soft)">Sou esposa, mãe e dona de casa, e conheço de perto a rotina de quem concilia casa, filhos e mil tarefas. Apaixonada pela primeira infância, sou pedagoga e especialista em neurociência e educação, professora e consultora do brincar em casa.</p>
+        <p style="color:var(--ink-soft)">Junto o que estudei à vida real da maternidade para ajudar outras mães a deixar a casa mais convidativa ao brincar — e a rotina mais leve.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROVA SOCIAL ====== -->
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center">
+        <span class="eyebrow">Quem já viveu</span>
+        <h2>O que dizem as mães.</h2>
+      </div>
+      <div class="quotes">
+        <div class="quote reveal"><p>“As crianças ganharam autonomia para brincar sozinhas e inventar brincadeiras com coisas do cotidiano. Sempre criam algo lúdico e juntos.”</p><span class="who">Ana Isa</span></div>
+        <div class="quote reveal"><p>“Hoje dispensei minha auxiliar, cozinho todos os dias e mantenho a ordem em casa — e minha filha está alegre, desenvolvendo habilidades. Ganhei autonomia e tempo até de me cuidar.”</p><span class="who">Mãe atendida</span></div>
+        <div class="quote reveal"><p>“Meu pensamento era que ela brincasse sozinha para eu fazer outras coisas. Hoje prefiro ficar com ela — o brincar virou uma forma de construir vínculo.”</p><span class="who">Mãe atendida</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FAQ ====== -->
+  <section class="band band--alt" id="faq">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center">
+        <span class="eyebrow">Dúvidas comuns</span>
+        <h2>Antes de começar.</h2>
+      </div>
+      <div class="faq reveal">
+        <details><summary>Para qual idade funciona?</summary><p>A consultoria é pensada para a primeira infância, de 0 a 7 anos — a fase em que o brincar mais estrutura o desenvolvimento.</p></details>
+        <details><summary>Preciso comprar muitos brinquedos?</summary><p>Não. A proposta é justamente aproveitar o que você já tem, elementos da natureza e materiais simples. Você recebe uma lista curada do que realmente vale a pena.</p></details>
+        <details><summary>Os encontros são online?</summary><p>O workshop e o plano intermediário são totalmente online. O plano Premium pode incluir um encontro presencial para clientes da Grande São Paulo.</p></details>
+        <details><summary>E se eu não tiver muito tempo?</summary><p>O cronograma é montado para caber na sua rotina real. A ideia é reduzir a sua sobrecarga, não somar mais uma tarefa.</p></details>
+        <!-- Sugestão: adicionar dúvidas sobre garantia, forma de pagamento e prazo do acompanhamento quando definirmos. -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA FINAL ====== -->
+  <section class="final" id="contato">
+    <span class="blob b3"></span>
+    <div class="wrap">
+      <h2 class="reveal">Que tal a casa virar um convite ao brincar?</h2>
+      <p class="reveal">Entre na lista de espera do workshop ou fale diretamente sobre o acompanhamento que faz sentido para a sua família.</p>
+      <div class="reveal" style="position:relative;z-index:2">
+        <a class="btn" href="#planos">Escolher meu plano</a>
+      </div>
+      <div class="todo reveal" style="max-width:520px;margin:24px auto 0"><strong>A definir:</strong> links reais de contato da consultoria — WhatsApp, Instagram e/ou botão de compra. Me mande e eu conecto os botões.</div>
+    </div>
+  </section>
+
+  <!-- ====== OFERTAS DA SIL ====== -->
+  <section class="ofertas" id="ofertas">
+    <div class="wrap ofertas-grid">
+      <div class="logo-wrap reveal">
+        <img src="ofertas-da-sil-logo.png" alt="Ofertas da Sil" />
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Além da consultoria</span>
+        <h2>Vem fazer parte do meu grupo de ofertas 🛍️</h2>
+        <p class="lead">Criei um grupo para compartilhar achadinhos, ofertas imperdíveis, cupons de desconto e produtos que valem a pena. A ideia é te ajudar a economizar e a encontrar coisas lindas e úteis para o dia a dia — sem passar horas procurando.</p>
+        <div class="tags">
+          <span>Casa</span><span>Moda</span><span>Crianças</span><span>e muito mais</span>
+        </div>
+        <a class="btn btn--coral" href="https://chat.whatsapp.com/HdtaHiWBE4R0VlGRnchO0M?s=cl&p=i&ilr=4&iam=0" target="_blank" rel="noopener">Entrar no grupo gratuito</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span class="brand" style="color:#F1E8D9"><span class="dot"></span>Brincar em Casa</span>
+    <span>Consultoria de espaços brincantes · primeira infância · <a href="https://chat.whatsapp.com/HdtaHiWBE4R0VlGRnchO0M?s=cl&p=i&ilr=4&iam=0" target="_blank" rel="noopener">Grupo Ofertas da Sil</a> · <span style="opacity:.7">@instagram (a definir)</span></span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12, rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
